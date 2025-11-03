@@ -18,7 +18,7 @@ const char* topic_energy  = "power_monitoring/data/energy";
 // ====== OBJEK ======
 WiFiClient espClient;
 PubSubClient client(espClient);
-PZEM004Tv30 pzem(&Serial2, 25, 26); // RX=25, TX=26
+PZEM004Tv30 pzem(&Serial2, 26, 25); // RX=25, TX=26
 
 // ====== FUNGSI ======
 void setup_wifi() {
@@ -53,7 +53,7 @@ void reconnect() {
 
 void setup() {
   Serial.begin(9600);
-  Serial2.begin(9600, SERIAL_8N1, 25, 26); // UART2 dengan pin 25/26 RX 26 TX25
+  Serial2.begin(9600, SERIAL_8N1, 26, 25); // UART2 dengan pin 25/26 RX 26 TX25
 
   Serial.println("Inisialisasi Sensor...");
   setup_wifi();
